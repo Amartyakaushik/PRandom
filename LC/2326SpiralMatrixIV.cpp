@@ -45,12 +45,25 @@
 // return arr;
 // }
 // };
+
 #include <bits/stdc++.h>
 #include <array>
+#include<iostream>
 using namespace std;
 
 int main(){
-    int char[] = {"ajc","ajc","ajc","ajc","ajc"};
-    cout<<sizeof(arr);
+// char arr[] = {'a','a','a','a','a'};
+// char arr2[] = "sdas";
+//     cout<<sizeof(arr)<<endl;
+//     cout<<strlen(arr2)<<endl;
+
+int lar = INT_MIN;
+int arr[]={1,2,3,423,23,222};
+for(int i : arr){
+    lar = max(i, lar);
+    // cout<<i;
+}
+
+cout<<lar;
     return 0;
 }
