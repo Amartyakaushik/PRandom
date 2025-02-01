@@ -552,6 +552,9 @@ Solve this question accordingly
 #include <bits/stdc++.h>
 using namespace std;
 
+string trim(string);
+vector<string> splitString(string);
+
 vector<vector<pair<int, int>>> adj;
 vector<int> parent;
 vector<int> depth;
@@ -615,6 +618,93 @@ int solve(int N, int R, int M, vector<vector<int>> edges, int Q, vector<vector<i
 
     return total;
 }
+
+// int main() {
+//     ios::sync_with_stdio(0);
+//     cin.tie(0); cout.tie(0);
+
+//     string inputline;
+//     getline(cin, inputline);
+//     int N = stoi(trim(inputline));
+
+//     getline(cin, inputline);
+//     int R = stoi(trim(inputline));
+
+//     getline(cin, inputline);
+//     int M = stoi(trim(inputline));
+
+//     vector<vector<int>> edges(M, vector<int>(3));
+//     for (int i = 0; i < M; i++) {
+//         getline(cin, inputline);
+//         vector<string> inputLineArr = splitString(trim(inputline));
+//         for(int j = 0; j<3; j++){
+//             edges[i][j] = stoi(inputLineArr[j]);
+//         }
+//     }
+
+//     getline(cin, inputline);
+//     int Q = stoi(trim(inputline));
+
+//     vector<vector<int>> queries(Q, vector<int>(4));
+//     for (int i = 0; i < Q; i++) {
+//         getline(cin, inputline);
+//         vector<string> inputLineArr = splitString(trim(inputline));
+//         for(int j = 0; j<4; j++){
+//             queries[i][j] = stoi(inputLineArr[j]);
+//         }
+//     }
+
+//     int result = solve(N, R, M, edges, Q, queries);
+//     cout << result << "\n";
+
+//     return 0;
+// }
+
+// // Utility function 
+// string trim(string str){
+
+// if(str.empty())
+// return str;
+
+// size_t firstScan = str.find_first_not_of(' ');
+// size_t first = firstScan == string::npos? str.length(): firstScan;
+
+// size_t last = str.find_last_not_of(' ');
+
+// return str.substr(first, last-first+1);
+
+// }
+
+// vector<string> splitString(string input_string) {
+
+// string::iterator new_end = unique(input_string.begin(), input_string.end(), [](char x, char y) {
+
+// return x == y and x == ' ';
+
+// });
+
+// input_string.erase(new_end, input_string.end());
+
+
+// while (input_string[input_string.length() - 1] = ' ') {
+// input_string.pop_back();
+// }
+
+// vector<string> splits;
+// char delimiter = ' ';
+
+// size_t i = 0;
+// size_t pos = input_string.find(delimiter);
+
+// while (pos != string:: npos) {
+//     splits.push_back(input_string.substr(i, pos - i));
+//     i = pos + 1;
+//     pos = input_string.find(delimiter, i);
+//     }
+// splits.push_back(input_string.substr(i, min(pos, input_string.length()) - i + 1));
+
+// return splits;
+// }
 
 int main() {
     ios::sync_with_stdio(0);
