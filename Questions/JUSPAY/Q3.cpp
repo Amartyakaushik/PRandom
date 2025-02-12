@@ -177,6 +177,60 @@ return splits;
 
 Solve accordingly
 */
+
+
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// int safeViewPoints(int N, int M, vector<int>& Arr1, vector<vector<int>>& Arr2) {
+//     vector<vector<int>> tree(N + 1); // Tree adjacency list
+//     for (auto& edge : Arr2) {
+//         tree[edge[0]].push_back(edge[1]);
+//         tree[edge[1]].push_back(edge[0]);
+//     }
+
+//     int count = 0; // Count of safe viewpoints
+//     vector<bool> visited(N + 1, false);
+
+//     function<void(int, int)> dfs = [&](int node, int hazardCount) {
+//         visited[node] = true;
+//         if (Arr1[node - 1] == 1) hazardCount++;
+//         else hazardCount = 0; // Reset consecutive hazardous count
+
+//         if (hazardCount > M) return; // Exceeded max allowed hazardous sections
+
+//         bool isLeaf = true;
+//         for (int neighbor : tree[node]) {
+//             if (!visited[neighbor]) {
+//                 isLeaf = false;
+//                 dfs(neighbor, hazardCount);
+//             }
+//         }
+//         if (isLeaf) count++; // Leaf node meeting conditions
+//     };
+
+//     dfs(1, 0); // Start DFS from node 1
+
+//     return count;
+// }
+
+// int main() {
+//     ios::sync_with_stdio(0); cin.tie(0);
+
+//     int N, M, k;
+//     cin >> N >> M >> k;
+
+//     vector<int> Arr1(N);
+//     for (int i = 0; i < N; i++) cin >> Arr1[i];
+
+//     vector<vector<int>> Arr2(k, vector<int>(2));
+//     for (int i = 0; i < k; i++) cin >> Arr2[i][0] >> Arr2[i][1];
+
+//     cout << safeViewPoints(N, M, Arr1, Arr2) << "\n";
+//     return 0;
+// }
+
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -227,6 +281,7 @@ int main() {
     cout << safeViewPoints(N, M, Arr1, Arr2) << "\n";
     return 0;
 }
+
 
 
 /*
